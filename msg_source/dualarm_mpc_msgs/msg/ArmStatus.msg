@@ -1,0 +1,16 @@
+uint8 LEFT=0
+uint8 RIGHT=1
+uint8 HOLD=0
+uint8 READY=1
+uint8 MPC=2
+uint8 FAULT=3
+builtin_interfaces/Time stamp
+uint64 session_id
+uint64 ready_plan_id
+uint64 active_plan_id
+uint8 arm
+uint8 mode
+bool state_valid
+bool torque_limited
+uint32 fault_code
+float64[6] command_effort

@@ -1,0 +1,44 @@
+<sdf version='1.9'>
+  <model name='transport_rod'>
+    <link name='rod'>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.14999999999999999</mass>
+        <inertia>
+          <ixx>2.2500000000000001e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.018011249999999999</iyy>
+          <iyz>0</iyz>
+          <izz>0.018011249999999999</izz>
+        </inertia>
+      </inertial>
+      <collision name='rod_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.03 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='rod_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.03 0.03</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <plugin name='ignition::gazebo::systems::PosePublisher' filename='libignition-gazebo-pose-publisher-system.so'>
+      <topic>/transport_rod/pose</topic>
+      <publish_model_pose>true</publish_model_pose>
+      <publish_nested_model_pose>true</publish_nested_model_pose>
+      <publish_link_pose>false</publish_link_pose>
+      <publish_visual_pose>false</publish_visual_pose>
+      <publish_collision_pose>false</publish_collision_pose>
+      <use_pose_vector_msg>false</use_pose_vector_msg>
+      <update_frequency>20</update_frequency>
+    </plugin>
+  </model>
+</sdf>
